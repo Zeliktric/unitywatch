@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f31c5288095c149942d548a542857e, type: 3}
+  m_Name: Helix Rockets
+  m_EditorClassIdentifier: 
+  abilityName: Helix Rockets
+  abilityIcon: {fileID: 21300000, guid: ca3cd7d81ed50434baa87614649f5762, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 4cc012f7a0f9a2f4a927be43126a9461, type: 3}
+  keybind: Right Button
+  isUltimate: 0
+  cooldown: 6
+  charges: 1
+  health: 0
+  armour: 0
+  shields: 0
+  overhealth: 0
+  barrierHealth: 0
+  healing:
+    valueRange: {x: 0, y: 0}
+    valuePerSecond: 0
+    isDamage: 0
+  damage:
+    valueRange: {x: 40, y: 40}
+    valuePerSecond: 0
+    isDamage: 0
+  areaOfEffect:
+    valueRange: {x: 80, y: 40}
+    valuePerSecond: 0
+    isDamage: 1
+  losRequired: 1
+  blockedByBarrier: 1
+  affectSelf: 1
+  friendlyFire: 0
+  headshotMultiplier: 1
+  damageAmplification: 0
+  damageReduction: 0
+  healingModification: 0
+  movementSpeed: 0
+  movementSpeedBuff: 0
+  movementSpeedPenalty: 0
+  movementSlow: 0
+  knockbackSpeed: {x: 4, y: 6}
+  projectileSpeed: 50
+  projectileRadius: 0.32
+  range: 102
+  areaOfEffectRadius: {x: 1, y: 3}
+  castTime: 0
+  cancelCast: 0
+  duration: 0
+  recoveryDuration: 0.5
+  minDetails: 0
+  maxDetails: 0

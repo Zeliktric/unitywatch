@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7049f6d61ece742b56d109be0d5a6d, type: 3}
+  m_Name: Friendly Standard Bot Data
+  m_EditorClassIdentifier: 
+  heroName: Enemy Bot
+  heroIcon: {fileID: 0}
+  hero2DIcon: {fileID: 21300000, guid: 8ec176a1f3675004abcb50e4f4fb4ef2, type: 3}
+  baseMoveSpeed: 5.5
+  baseCrouchSpeed: 3
+  backwardsMoveReduction: 0.9
+  crouchHeight: 0.7
+  jumpHeight: 0.98
+  role: Damage
+  hp:
+    health: 200
+    armour: 0
+    shields: 0
+    selfDamage: 0
+  totalHP: 200
+  ultimateSystem:
+    cost: 0
+    current: 0
+    ready: 0
+    active: 0
+  perkSystem:
+    currentLevel: 1
+    levels:
+    - 0
+    - 0
+    current: 0

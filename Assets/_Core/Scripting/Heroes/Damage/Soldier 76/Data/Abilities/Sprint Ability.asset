@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f31c5288095c149942d548a542857e, type: 3}
+  m_Name: Sprint Ability
+  m_EditorClassIdentifier: 
+  abilityName: Sprint
+  abilityIcon: {fileID: 21300000, guid: 5fdd1ed20eaf6fb48bd4e048c733d06f, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 4cc012f7a0f9a2f4a927be43126a9461, type: 3}
+  keybind: Left Shift
+  isUltimate: 0
+  cooldown: 0
+  charges: 1
+  health: 0
+  armour: 0
+  shields: 0
+  overhealth: 0
+  barrierHealth: 0
+  healing:
+    valueRange: {x: 0, y: 0}
+    valuePerSecond: 0
+    isDamage: 0
+  damage:
+    valueRange: {x: 0, y: 0}
+    valuePerSecond: 0
+    isDamage: 0
+  areaOfEffect:
+    valueRange: {x: 0, y: 0}
+    valuePerSecond: 0
+    isDamage: 0
+  losRequired: 0
+  blockedByBarrier: 0
+  affectSelf: 0
+  friendlyFire: 0
+  headshotMultiplier: 1
+  damageAmplification: 0
+  damageReduction: 0
+  healingModification: 0
+  movementSpeed: 0
+  movementSpeedBuff: 0.5
+  movementSpeedPenalty: 0
+  movementSlow: 0
+  knockbackSpeed: {x: 0, y: 0}
+  projectileSpeed: 0
+  projectileRadius: 0
+  range: 0
+  areaOfEffectRadius: {x: 0, y: 0}
+  castTime: 0
+  cancelCast: 0
+  duration: Infinity
+  recoveryDuration: 0.3
+  minDetails: 0
+  maxDetails: 0

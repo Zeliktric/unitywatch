@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18cf3d6e850e5444cb96c35d9bdb754f, type: 3}
+  m_Name: Duo Cannons
+  m_EditorClassIdentifier: 
+  weaponName: 
+  weaponIcon: {fileID: 0}
+  isProjectile: 1
+  healing:
+    valueRange: {x: 0, y: 0}
+    valuePerSecond: 0
+    isDamage: 0
+  damage:
+    valueRange: {x: 8, y: 8}
+    valuePerSecond: 0
+    isDamage: 1
+  selfAffect: 0
+  falloffRange: {x: 0, y: 0}
+  headshotMultiplier: 2
+  spread: 0
+  projectileSpeed: 60
+  projectileRadius: 0
+  range: Infinity
+  radius: 0.05
+  fireRate: 4
+  ammo: 4
+  reloadTime: 1
+  canReload: 1

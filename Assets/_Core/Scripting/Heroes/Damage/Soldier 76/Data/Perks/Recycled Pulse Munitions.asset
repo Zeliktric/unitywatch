@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1217b196a5487d14d96a532a2c41501c, type: 3}
+  m_Name: Recycled Pulse Munitions
+  m_EditorClassIdentifier: 
+  perkName: Recycled Pulse Munitions
+  perkDesc: Helix Rockets reload 15 ammo if they damage an enemy.
+  perkImg: {fileID: 21300000, guid: 9032a00ef41717c479fce896d9cfc9b6, type: 3}
