@@ -38,7 +38,7 @@ Vote for the next heroes to be created here ->
 | Pharah |
 | Reaper |
 | Sojourn |
-| Soldier: 76 | ✅ |
+| [Soldier: 76](https://github.com/Zeliktric/Unitywatch/tree/main/Assets/_Core/Scripting/Heroes/Damage/Soldier%2076) | ✅ |
 | Sombra |
 | Symmetra |
 | Torbjörn |
