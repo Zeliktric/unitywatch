@@ -14,7 +14,8 @@ namespace Unitywatch
     {
         [SerializeField]
         private GameObject friendlyToEnemyPrefab,
-            enemyToFriendlyPrefab;
+            enemyToFriendlyPrefab,
+            selfDeathPrefab;
 
         [SerializeField]
         private Transform killFeedList;
@@ -35,17 +36,26 @@ namespace Unitywatch
             Entity friendly,
                 enemy;
 
-            if (isFriendly)
+            if (from.Equals(to))
             {
-                entry = Instantiate(friendlyToEnemyPrefab);
-                friendly = from;
-                enemy = to;
+                entry = Instantiate(selfDeathPrefab);
+                friendly = to;
+                enemy = from;
             }
             else
             {
-                entry = Instantiate(enemyToFriendlyPrefab);
-                friendly = to;
-                enemy = from;
+                if (isFriendly)
+                {
+                    entry = Instantiate(friendlyToEnemyPrefab);
+                    friendly = from;
+                    enemy = to;
+                }
+                else
+                {
+                    entry = Instantiate(enemyToFriendlyPrefab);
+                    friendly = to;
+                    enemy = from;
+                }
             }
 
             entry.transform.Find("Friendly/Player Name").GetComponent<TMP_Text>().text = friendly.EntityName;

@@ -71,6 +71,17 @@ namespace Unitywatch
         /// <param name="col"></param>
         protected void OnTriggerEnter(Collider col)
         {
+            if (isDead) return;
+
+            if (col.gameObject.layer == LayerMask.NameToLayer("Void"))
+            {
+                // Entity has fallen into the void so instantly kill them
+                // TODO: award kill credit if a player knocks another player into the void (if knockback damage = true)
+
+                hero.UpdateHP(hero.TotalHP(), true, null, false);
+                return;
+            }
+
             if (col.gameObject.layer == LayerMask.NameToLayer("Pick Up"))
             {
                 Consumable consumable = col.transform.parent.GetComponent<Consumable>();
@@ -78,6 +89,7 @@ namespace Unitywatch
                 switch (col.transform.root.name)
                 {
                     case "Health Pack":
+                    case "Mini Health Pack":
                         if (hero.TotalHP() != hero.HeroData.TotalHP)
                         {
                             // Only apply the health pack if the (real) player's health is not full.

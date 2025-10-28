@@ -486,11 +486,11 @@ namespace Unitywatch
         public void UpdateHP(double value, bool damage, Entity from, bool isUltimate, AbilityData abilityUsed = null, bool headshot = false, bool autoRegen = false, string affectArmour = "yes")
         {
             // Apply the healing or damage modification.
-            value *= damage ? from.Hero.DamageModification : HealingModification;
+            value *= damage && from ? from.Hero.DamageModification : HealingModification;
 
             double tempValue = value;
             double hitValue = 0;
-            bool selfDamage = damage && from.EntityID == entity.EntityID;
+            bool selfDamage = damage && from?.EntityID == entity.EntityID;
 
             if (damage)
             {
@@ -499,7 +499,7 @@ namespace Unitywatch
                 // Keep track of self damage, as you cannot gain ultimate charge & perk progress from dealing or healing it.
                 if (selfDamage) CurrentHP.SelfDamage += tempValue;
 
-                if (from.Hero.HeroData.Role == "Damage" && !selfDamage)
+                if (from?.Hero.HeroData.Role == "Damage" && !selfDamage)
                 {
                     // If the damage received was from a hero from the 'Damage' role, then apply the damage passive.
                     damagePassiveTime = damagePassiveDuration;
@@ -648,19 +648,30 @@ namespace Unitywatch
             double totalHealth = CurrentHP.Health + CurrentHP.Armour + CurrentHP.Shields;
             if (totalHealth <= 0f)
             {
-                // Set this entity to "dead" and credit the final blow to the 'from' entity.
+                // Set this entity to "dead".
                 entity.OnDead.Invoke();
-                from.FinalBlow(entity, abilityUsed, headshot, isUltimate);
+
+                if (from && !selfDamage)
+                {
+                    // Award the final blow to the 'from' entity if they exist (and they are not the entity that died).
+                    from.FinalBlow(entity, abilityUsed, headshot, isUltimate);
+                }
+                else
+                {
+                    // This entity either killed themselves or died to the void by themself.
+                    entity.FinalBlow(entity, null, false, false);
+                }
+                
             }
 
-            if (!selfDamage && !isUltimate && !autoRegen && from.gameObject.tag == "Player")
+            if (!selfDamage && !isUltimate && !autoRegen && from?.gameObject.tag == "Player")
             {
-                // Award ultimate charge and perk progress for the 'from' entity.
-                CalculateUltCharge(hitValue, from);
-                CalculatePerkProgress(hitValue, from);
+                // Award ultimate charge and perk progress for the 'from' entity if they exist.
+                if (from) CalculateUltCharge(hitValue, from);
+                if (from) CalculatePerkProgress(hitValue, from);
             }
 
-            if (damage) ShowUIHealth(from);
+            if (damage && from) ShowUIHealth(from);
 
             // Spawn a world-UI number to show the damage / healing done.
             if (entity.hitValuePrefab != null && hitValue != 0) entity.hitValuePrefab.Spawn(entity.hitValueParent.transform.position, (float)hitValue, entity.hitValueParent);
